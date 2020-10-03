@@ -8,9 +8,9 @@ It is based on [Prosemirror](https://prosemirror.net/) which is a solid foundati
 Well, there are many Editors out there, including CKEditor, TinyMCE, Trix etc. but they miss all the spirit of Alpine.JS!  
 
 While all the previously mentioned Editors are great, for me they provide way too much "boilerplate".  
-For CK and Tiny you need to create Themes when you want to customize them, you need to provide configs etc. 
+For CK and Tiny you need to create Themes when you want to customize them etc. 
 
-What I wanted is to be more "declarative". With AlpineEditor you simply create a `div` and put `button`s in it, which have a `data-command` attribute. You are ready to go. You can style it with e.g. TailwindCSS as you wish, without the need for overriden complex Editor CSS.
+What I wanted is to be more "declarative". With AlpineEditor you simply define two `div`s, one for the Editor itself and one for the Menu. In the Menu `div` you simply add Buttons with a `data-command` attribute, which defines what the Button should do, clicked. You have kind of full control over the markup and style it with ease (e.g. with TailwindCSS) without having to think about more or less complex CSS provided by the Editor to override.
 
 You can even use Alpine.JS (or JS in general) to create Dropdown or something within the Toolbar.
 
@@ -19,7 +19,7 @@ You can even use Alpine.JS (or JS in general) to create Dropdown or something wi
 First of all include the AlpineEditor via CDN:
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/maxeckel/alpine-editor@0.1.0/dist/alpine-editor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/maxeckel/alpine-editor@0.2.0/dist/alpine-editor.min.js"></script>
 ```
 
 When this is done you can use Alpine.JS to initialize an Editor instance:
