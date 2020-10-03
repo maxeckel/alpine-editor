@@ -10,6 +10,7 @@ import ActionsManager from "./Managers/ActionsManager";
 import CommandsManager from "./Managers/CommandsManager";
 import initLists from "./Lists/Lists";
 import initNodes from "./Nodes/Nodes";
+import debounce from "lodash-es/debounce";
 
 export default class AlpineEditor
 {
@@ -66,15 +67,11 @@ export default class AlpineEditor
             }
         });
 
-        this.view.dom.addEventListener('input', this.handleInputEvent.bind(this));
+        this.view.dom.addEventListener('input', debounce(this.handleInputEvent.bind(this), 250));
     }
 
     handleInputEvent() {
-        let node = this.editorNode.firstChild;
-
-        console.log(`Editor: ${node.innerHTML}`);
-
-        this.config.content = node.innerHTML;
+        this.config.content = this.editorNode.firstChild.innerHTML;
     }
 
     initTools() {
