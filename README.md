@@ -5,7 +5,7 @@ It is based on [Prosemirror](https://prosemirror.net/) which is a solid foundati
 
 ## Why another WYSIWYG Editor?
 
-Well, there are many Editors out there. Including CKEditor, TinyMCE, Trix etc. but with the spirit of Alpine. JS!  
+Well, there are many Editors out there, including CKEditor, TinyMCE, Trix etc. but they miss all the spirit of Alpine.JS!  
 
 While all the previously mentioned Editors are great, for me they provide way too much "boilerplate".  
 For CK and Tiny you need to create Themes when you want to customize them, you need to provide configs etc. 
