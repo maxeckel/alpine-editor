@@ -19,7 +19,7 @@ You can even use Alpine.JS (or JS in general) to create Dropdown or something wi
 First of all include the AlpineEditor via CDN:
 
 ```
-
+<script src="https://cdn.jsdelivr.net/gh/maxeckel/alpine-editor@0.1.0/dist/alpine-editor.min.js"></script>
 ```
 
 When this is done you can use Alpine.JS to initialize an Editor instance:
