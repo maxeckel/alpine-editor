@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting started | AlpineEditor Docs</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    
+    <meta name="description" content="Documentation for the AlpineEditor">
+    <link rel="preload" href="/alpine-editor/assets/css/0.styles.77969be2.css" as="style"><link rel="preload" href="/alpine-editor/assets/js/app.727ee1ee.js" as="script"><link rel="preload" href="/alpine-editor/assets/js/2.657058ca.js" as="script"><link rel="preload" href="/alpine-editor/assets/js/8.eccb0885.js" as="script"><link rel="prefetch" href="/alpine-editor/assets/js/3.db2b2142.js"><link rel="prefetch" href="/alpine-editor/assets/js/4.b41e69dd.js"><link rel="prefetch" href="/alpine-editor/assets/js/5.5bc5eaa4.js"><link rel="prefetch" href="/alpine-editor/assets/js/6.e416f727.js"><link rel="prefetch" href="/alpine-editor/assets/js/7.dd3ffbe8.js"><link rel="prefetch" href="/alpine-editor/assets/js/9.7ef90f6d.js">
+    <link rel="stylesheet" href="/alpine-editor/assets/css/0.styles.77969be2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/alpine-editor/" class="home-link router-link-active"><!----> <span class="site-name">AlpineEditor Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/alpine-editor/" aria-current="page" class="sidebar-link">AlpineEditor</a></li><li><a href="/alpine-editor/installation.html" class="sidebar-link">Installation</a></li><li><a href="/alpine-editor/getting-started.html" aria-current="page" class="active sidebar-link">Getting started</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/alpine-editor/getting-started.html#usage-with-alpine-js" class="sidebar-link">Usage with Alpine.JS</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting started</h1> <h2 id="usage-with-alpine-js"><a href="#usage-with-alpine-js" class="header-anchor">#</a> Usage with Alpine.JS</h2> <p>The basic markup for the editor is really simple.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> 
+    <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{
+        editorConfig: { 
+            editorClasses: <span class="token punctuation">'</span>focus:outline-none<span class="token punctuation">'</span>,
+            content: <span class="token punctuation">'</span>Dummy<span class="token punctuation">'</span>,
+        }
+    }<span class="token punctuation">&quot;</span></span> 
+    <span class="token attr-name">x-init</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>
+        new AlpineEditor($refs.editor, $refs.editorMenu, editorConfig);
+    <span class="token punctuation">&quot;</span></span> 
+    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-gray-200 border border-gray-900<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>editorMenu<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>relative z-0 inline-flex shadow-sm rounded-md<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> 
+            <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-command</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>strong<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-active-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-blue-400<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-gray-500<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">&gt;</span></span>
+            Bold
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> 
+            <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-command</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>em<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-active-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-blue-400<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-gray-500<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">&gt;</span></span>
+            Emphasize
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> 
+            <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-command</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>code<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-active-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-blue-400<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-gray-500<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">&gt;</span></span>
+            Code
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> 
+            <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-command</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>heading<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">data-level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">data-active-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-blue-400<span class="token punctuation">&quot;</span></span> 
+            <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>bg-gray-500<span class="token punctuation">&quot;</span></span>
+        <span class="token punctuation">&gt;</span></span>
+            H1
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>editor<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>p-2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Now you have a working editor containing 4 actions:</p> <ul><li>Bold/Strong</li> <li>Emphasize</li> <li>Code</li> <li>H1</li></ul> <p>All of the classes can be ignored/swapped! These are only included to get you starting and show you how it works.</p> <p>Please have a look at the <a href="/commands">Commands</a> section to see all available commands for the editor and their options.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/alpine-editor/installation.html" class="prev">
+        Installation
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/alpine-editor/assets/js/app.727ee1ee.js" defer></script><script src="/alpine-editor/assets/js/2.657058ca.js" defer></script><script src="/alpine-editor/assets/js/8.eccb0885.js" defer></script>
+  </body>
+</html>
