@@ -16,7 +16,7 @@ export default {
     ],
     plugins: [
         nodeResolve(),
-        //terser(),
+        terser(),
         filesize(),
         babel({
           babelHelpers: 'bundled',
