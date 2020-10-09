@@ -12,9 +12,9 @@ export default class MenuItemNode extends MenuItem {
     }
 
     isActive() {
-        if (this.options.toggle === "hideable") {
+        if (this.options.hideable) {
             return this.run(this.state);
-        } else if (this.options.toggle === "activatable") {
+        } else if (this.options.activatable) {
             let {$from, to, node} = this.state.selection
             if (node) return node.hasMarkup(this.type, this.attrs)
             return to <= $from.end() && $from.parent.hasMarkup(this.type, this.attrs)
@@ -22,9 +22,9 @@ export default class MenuItemNode extends MenuItem {
     }
 
     update() {
-        if (this.options.toggle === "hideable") {
+        if (this.options.hideable) {
             this.menuItemNode.style.display = this.isActive() ? "" : "none"
-        } else if (this.options.toggle === "activatable") {
+        } else if (this.options.activatable) {
             const containsClass = this.menuItemNode.classList.contains(this.activeClass);
 
             if (!this.isActive() && containsClass) {

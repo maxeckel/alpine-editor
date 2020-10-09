@@ -7,54 +7,53 @@ The basic markup for the editor is really simple.
 ```html
 <div 
     x-data="{
-        editorConfig: { 
-            editorClasses: 'focus:outline-none',
-            content: 'Dummy',
-        }
+        content: 'Lorem ipsum dolor sit amet'
     }" 
-    x-init="
-        new AlpineEditor($refs.editor, $refs.editorMenu, editorConfig);
-    " 
     class="bg-gray-200 border border-gray-900"
 >
-    <div x-ref="editorMenu" class="relative z-0 inline-flex shadow-sm rounded-md">
-        <button 
-            type="button" 
-            data-command="strong" 
-            data-active-class="bg-blue-400" 
-            class="bg-gray-500"
-        >
-            Bold
-        </button>
-        <button 
-            type="button" 
-            data-command="em" 
-            data-active-class="bg-blue-400" 
-            class="bg-gray-500"
-        >
-            Emphasize
-        </button>
-        <button 
-            type="button" 
-            data-command="code" 
-            data-active-class="bg-blue-400" 
-            class="bg-gray-500"
-        >
-            Code
-        </button>
-        <button 
-            type="button" 
-            data-command="heading" 
-            data-level="1"
-            data-active-class="bg-blue-400" 
-            class="bg-gray-500"
-        >
-            H1
-        </button>
-    </div>
+    <alpine-editor 
+        x-model="content"
+        data-h1-classes="text-xl"
+    >
+        <div data-type="menu">
+            <button 
+                type="button" 
+                data-command="strong" 
+                data-active-class="bg-blue-400" 
+                class="bg-gray-500"
+            >
+                Bold
+            </button>
+            <button 
+                type="button" 
+                data-command="em" 
+                data-active-class="bg-blue-400" 
+                class="bg-gray-500"
+            >
+                Emphasize
+            </button>
+            <button 
+                type="button" 
+                data-command="code" 
+                data-active-class="bg-blue-400" 
+                class="bg-gray-500"
+            >
+                Code
+            </button>
+            <button 
+                type="button" 
+                data-command="heading" 
+                data-level="1"
+                data-active-class="bg-blue-400" 
+                class="bg-gray-500"
+            >
+                H1
+            </button>
+        </div>
 
-    <div x-ref="editor" class="p-2">
-    </div>
+        <div data-type="editor" class="p-2">
+        </div>
+    </alpine-editor>
 </div>
 ```
 

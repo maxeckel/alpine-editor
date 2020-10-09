@@ -14,42 +14,99 @@
 <body>
     <div 
         x-data="{
-            editorConfig: { 
-                editorClasses: 'focus:outline-none',
-                content: 'Dummy',
-            }
+            content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
         }" 
-        x-init="
-            new AlpineEditor($refs.editor, $refs.editorMenu, editorConfig);
-            $watch('editorConfig.content', value => console.log(value));
-        " 
         class="bg-gray-200 border border-gray-900"
     >
-        <div x-ref="editorMenu" class="relative z-0 inline-flex shadow-sm rounded-md">
-            <button 
-                type="button" 
-                data-command="strong" 
-                data-active-class="bg-gray-400" 
-                class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
-            >
-                B
-            </button>
-            <button type="button" data-command="em" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">I</button>
-            <button type="button" data-command="code" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">C</button>
-            <button type="button" data-command="ordered_list" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">OL</button>
-            <button type="button" data-command="bullet_list" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">BL</button>
-            <button type="button" data-command="lift" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">LIFT</button>
-            <button type="button" data-command="join_up" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">JUP</button>
-            <button type="button" data-command="join_down" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">JDO</button>
-            <button type="button" data-command="heading" data-level="1" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">H1</button>
-            <button type="button" data-command="paragraph" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">PA</button>
-            <button type="button" data-command="blockquote" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">BQU</button>
-            <button type="button" data-command="code_block" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">CB</button>
-        </div>
+        <alpine-editor 
+            x-model="content"
+            data-ul-classes="bg-green-100"
+            data-ol-classes="bg-red-100"
+            data-li-classes="bg-blue-100"
+            data-p-classes="text-2xl"
+            data-bq-classes="text-red-900"
+            data-pre-classes="text-green-500"
+            data-editor-classes="px-8"
+        >
+            <div data-type="menu">
+                <button 
+                    type="button" 
+                    data-command="strong" 
+                    data-active-class="bg-gray-400" 
+                    class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <text x="50%" y="50%" text-anchor="middle" dy=".5ex" font-family="Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="bold">
+                            B
+                        </text>
+                    </svg>
+                </button>
 
-        <div x-ref="editor" class="p-2">
+                <button 
+                    type="button" 
+                    data-command="em" 
+                    data-active-class="bg-gray-400" 
+                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" text-anchor="middle" dy=".5ex" font-family="Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif" font-weight="bold" font-size="15" font-style="italic">i</text></svg>
+                </button>
 
-        </div>
+                <button 
+                    type="button" 
+                    data-command="code" 
+                    data-active-class="bg-gray-400" 
+                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M7 6L4 9l3 3v-1.5L5.5 9 7 7.5zm2 0v1.5L10.5 9 9 10.5V12l3-3zM2.406 1A.517.517 0 0 0 2 1.5v13c0 .262.238.5.5.5h11a.52.52 0 0 0 .5-.5V4.375c.002-.102-.13-.193-.156-.219l-3-3A.506.506 0 0 0 10.5 1zM3 2h7v2.5c0 .262.238.5.5.5H13v9H3zm8 .688L12.313 4H11z"/></svg>
+                </button>
+
+                <button 
+                    type="button" 
+                    data-command="ordered_list" 
+                    data-active-class="bg-gray-400" 
+                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h9v2H6zm0 5h9v2H6zm0 5h9v2H6zm-2.799.846q.392.1.594.352.205.25.205.636 0 .576-.441.877-.441.298-1.287.298-.298 0-.599-.05-.298-.046-.591-.142v-.77q.28.14.555.212.277.07.545.07.396 0 .607-.137.212-.138.212-.394 0-.265-.218-.4-.215-.137-.638-.137h-.4v-.644h.421q.376 0 .56-.116.185-.12.185-.36 0-.224-.18-.346-.178-.122-.505-.122-.242 0-.488.055-.246.054-.49.16v-.731q.295-.083.586-.125.29-.041.57-.041.756 0 1.13.249.375.246.375.744 0 .34-.179.558-.179.215-.529.304zm-.905-3.609H4v.734H1.186v-.734L2.599 7.99q.19-.172.28-.335.091-.163.091-.34 0-.272-.184-.438-.182-.166-.485-.166-.234 0-.511.101-.278.099-.594.296v-.851q.337-.112.667-.169.329-.06.645-.06.696 0 1.08.307.386.306.386.853 0 .317-.163.592-.164.272-.688.731l-.827.726zM1.228 4.276h.903V1.714l-.927.19V1.21l.922-.191h.971v3.258H4v.706H1.228v-.706z"/></svg>
+                </button>
+
+                <button type="button" data-command="bullet_list" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 2h9v2H6zm0 5h9v2H6zm0 5h9v2H6z"/>
+                        <circle cx="3" cy="3" r="1.75"/>
+                        <circle cx="3" cy="8" r="1.75"/>
+                        <circle cx="3" cy="13" r="1.75"/>
+                    </svg>
+                </button>
+
+                <button 
+                    type="button" 
+                    data-command="lift" 
+                    data-active-class="bg-gray-400" 
+                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 1h14v2H1zm0 4h9v2H1zm0 4h9v2H1zm0 4h14v2H1zm10-5l4-3v6z"/></svg>
+                </button>
+
+                <button type="button" data-command="join_up" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">JUP</button>
+                <button type="button" data-command="join_down" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">JDO</button>
+
+                <button type="button" data-command="heading" data-level="1" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">H1</button>
+                <button type="button" data-command="paragraph" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">PA</button>
+
+                <button 
+                    type="button" 
+                    data-command="blockquote" 
+                    data-active-class="bg-gray-400"
+                    class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 2.013c-1.998 0-3.818.382-5.188 1.125S.499 5.054.499 6.513c0 1.237.926 2.345 2.281 3.156s3.197 1.344 5.219 1.344c.344 0 .563.019.906 0l5.875 2.938c.377.18.854-.32.656-.688l-1.813-3.656c1.242-.79 1.875-2.014 1.875-3.094 0-1.46-.943-2.632-2.313-3.375S9.998 2.013 8 2.013z"/></svg>
+                </button>
+
+                <button type="button" data-command="code_block" data-active-class="bg-gray-400" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">CB</button>
+            </div>
+
+            <div data-type="editor"></div>
+        </alpine-editor>
     </div>
 </body>
 </html>

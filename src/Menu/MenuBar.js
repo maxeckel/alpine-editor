@@ -1,5 +1,4 @@
 import MenuItemMark from "./MenuItemMark";
-import { findNode } from "../Utils";
 import MenuItemNode from "./MenuItemNode";
 import MenuItemAction from "./MenuItemAction";
 
@@ -14,19 +13,17 @@ const OPTIONS_DATA_ATTRIBUTES = [
 
 export default class MenuBar
 {
-    constructor(menuNode, editor, editorView) {
+    constructor(editor, editorView) {
         this.editor = editor;
         this.editorView = editorView;
         this.actionsManager = editor.actionsManager;
         this.commandsManager = editor.commandsManager;
         this.menuItems = [];
 
-        this.initMenuNode(menuNode);
+        this.initMenuNode(editor.menuNode);
     }
 
-    initMenuNode(menu) {
-        const menuNode = findNode(menu);
-
+    initMenuNode(menuNode) {
         menuNode.querySelectorAll("button[data-command]").forEach(child => {
             let menuItem;
             let attrs = this.extractNodeAttributes(child);
@@ -37,7 +34,8 @@ export default class MenuBar
             } else if (this.commandsManager.hasCommand(options.command)) {
                 let command = this.commandsManager.getCommand(options.command);
                 options.run = command.action;
-                options.toggle = command.toggle;
+                options.hideable = command.hideable;
+                options.activatable = command.activatable;
 
                 menuItem = new MenuItemNode(child, this.editorView, options, attrs);
             } else if (this.actionsManager.hasAction(options.command)) {

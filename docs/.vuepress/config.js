@@ -6,7 +6,9 @@ module.exports = {
         sidebar: [
           '/',
           '/installation',
-          '/getting-started'
+          '/getting-started',
+          '/commands',
+          '/attributes'
         ]
       }
   }
