@@ -5,7 +5,7 @@
 If you want to use a CDN to include the AlpineEditor in your project:
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/maxeckel/alpine-editor@0.3.0/dist/alpine-editor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/maxeckel/alpine-editor@0.3.1/dist/alpine-editor.min.js"></script>
 ```
 
 Now head over to the [Getting started](/getting-started) guide.
