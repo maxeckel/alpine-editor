@@ -92,7 +92,8 @@ export default class EditorComponent extends HTMLElement {
 
     dispatchCustomInputEvent() {
         let inputEvent = new CustomEvent('input', {
-            detail: this.editorNode.firstChild.innerHTML
+            detail: this.editorNode.firstChild.innerHTML,
+            bubbles: true
         });
 
         this.editorNode.dispatchEvent(inputEvent);
