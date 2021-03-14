@@ -1,6 +1,6 @@
 {
   "name": "alpine-editor",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A Prosemirror based WYSIWYG Editor made for Alpine.JS and Laravel Livewire",
   "main": "dist/alpine-editor.js",
   "files": [
